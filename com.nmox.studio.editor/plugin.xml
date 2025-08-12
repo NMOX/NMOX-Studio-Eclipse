@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.nmox.studio.editor.html.HTMLEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="html,htm"
+            icon="icons/html.png"
+            id="com.nmox.studio.editor.html"
+            name="NMOX HTML Editor">
+      </editor>
+      <editor
+            class="com.nmox.studio.editor.css.CSSEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="css,scss,sass,less"
+            icon="icons/css.png"
+            id="com.nmox.studio.editor.css"
+            name="NMOX CSS Editor">
+      </editor>
+      <editor
+            class="com.nmox.studio.editor.javascript.JavaScriptEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="js,jsx,ts,tsx,mjs,cjs"
+            icon="icons/js.png"
+            id="com.nmox.studio.editor.javascript"
+            name="NMOX JavaScript Editor">
+      </editor>
+      <editor
+            class="com.nmox.studio.editor.json.JSONEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="json"
+            icon="icons/json.png"
+            id="com.nmox.studio.editor.json"
+            name="NMOX JSON Editor">
+      </editor>
+      <editor
+            class="com.nmox.studio.editor.markdown.MarkdownEditor"
+            contributorClass="org.eclipse.ui.texteditor.BasicTextEditorActionContributor"
+            extensions="md,markdown"
+            icon="icons/markdown.png"
+            id="com.nmox.studio.editor.markdown"
+            name="NMOX Markdown Editor">
+      </editor>
+   </extension>
+   
+   <extension
+         point="org.eclipse.core.contenttype.contentTypes">
+      <content-type
+            base-type="org.eclipse.core.runtime.text"
+            file-extensions="html,htm"
+            id="com.nmox.studio.editor.htmlContent"
+            name="HTML Content"
+            priority="high">
+      </content-type>
+      <content-type
+            base-type="org.eclipse.core.runtime.text"
+            file-extensions="css,scss,sass,less"
+            id="com.nmox.studio.editor.cssContent"
+            name="CSS Content"
+            priority="high">
+      </content-type>
+      <content-type
+            base-type="org.eclipse.core.runtime.text"
+            file-extensions="js,jsx,ts,tsx,mjs,cjs"
+            id="com.nmox.studio.editor.jsContent"
+            name="JavaScript Content"
+            priority="high">
+      </content-type>
+   </extension>
+</plugin>

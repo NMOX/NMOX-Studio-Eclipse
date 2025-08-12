@@ -1,0 +1,17 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: NMOX Studio Core
+Bundle-SymbolicName: com.nmox.studio.core;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.nmox.studio.core.Activator
+Bundle-Vendor: NMOX
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.ui
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ActivationPolicy: lazy
+Export-Package: com.nmox.studio.core,
+ com.nmox.studio.core.model,
+ com.nmox.studio.core.server,
+ com.nmox.studio.core.utils,
+ com.nmox.studio.core.preferences

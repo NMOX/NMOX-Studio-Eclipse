@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: NMOX Studio UI
+Bundle-SymbolicName: com.nmox.studio.ui;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: com.nmox.studio.ui.Activator
+Bundle-Vendor: NMOX
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.core.resources,
+ org.eclipse.swt,
+ com.nmox.studio.core
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Bundle-ActivationPolicy: lazy
+Export-Package: com.nmox.studio.ui,
+ com.nmox.studio.ui.perspectives,
+ com.nmox.studio.ui.views,
+ com.nmox.studio.ui.editors

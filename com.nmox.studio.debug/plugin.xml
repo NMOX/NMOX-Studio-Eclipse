@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.debug.core.launchConfigurationTypes">
+      <launchConfigurationType
+            delegate="com.nmox.studio.debug.launcher.NodeJSLaunchDelegate"
+            id="com.nmox.studio.debug.nodejs"
+            modes="run,debug"
+            name="Node.js Application"
+            public="true"
+            sourceLocatorId="org.eclipse.debug.core.sourceLocator"
+            sourcePathComputerId="com.nmox.studio.debug.nodeSourcePathComputer">
+      </launchConfigurationType>
+      <launchConfigurationType
+            delegate="com.nmox.studio.debug.launcher.BrowserLaunchDelegate"
+            id="com.nmox.studio.debug.browser"
+            modes="run,debug"
+            name="Browser Application"
+            public="true">
+      </launchConfigurationType>
+   </extension>
+   
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTabGroups">
+      <launchConfigurationTabGroup
+            class="com.nmox.studio.debug.launcher.NodeJSTabGroup"
+            id="com.nmox.studio.debug.nodejs.tabgroup"
+            type="com.nmox.studio.debug.nodejs">
+      </launchConfigurationTabGroup>
+      <launchConfigurationTabGroup
+            class="com.nmox.studio.debug.launcher.BrowserTabGroup"
+            id="com.nmox.studio.debug.browser.tabgroup"
+            type="com.nmox.studio.debug.browser">
+      </launchConfigurationTabGroup>
+   </extension>
+   
+   <extension
+         point="org.eclipse.debug.ui.launchConfigurationTypeImages">
+      <launchConfigurationTypeImage
+            configTypeID="com.nmox.studio.debug.nodejs"
+            icon="icons/nodejs.png"
+            id="com.nmox.studio.debug.nodejs.image">
+      </launchConfigurationTypeImage>
+      <launchConfigurationTypeImage
+            configTypeID="com.nmox.studio.debug.browser"
+            icon="icons/browser.png"
+            id="com.nmox.studio.debug.browser.image">
+      </launchConfigurationTypeImage>
+   </extension>
+   
+   <extension
+         point="org.eclipse.debug.ui.launchShortcuts">
+      <shortcut
+            category="com.nmox.studio.debug"
+            class="com.nmox.studio.debug.launcher.NodeJSLaunchShortcut"
+            icon="icons/nodejs.png"
+            id="com.nmox.studio.debug.nodejs.shortcut"
+            label="Node.js Application"
+            modes="run,debug">
+         <contextualLaunch>
+            <enablement>
+               <with variable="selection">
+                  <count value="1"/>
+                  <iterate>
+                     <or>
+                        <test property="org.eclipse.debug.ui.matchesPattern" value="*.js"/>
+                        <test property="org.eclipse.debug.ui.matchesPattern" value="*.mjs"/>
+                        <test property="org.eclipse.debug.ui.matchesPattern" value="*.cjs"/>
+                     </or>
+                  </iterate>
+               </with>
+            </enablement>
+         </contextualLaunch>
+      </shortcut>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="com.nmox.studio.debug.commands"
+            name="Debug Commands">
+      </category>
+      <command
+            categoryId="com.nmox.studio.debug.commands"
+            id="com.nmox.studio.debug.toggleBreakpoint"
+            name="Toggle Breakpoint">
+      </command>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.nmox.studio.debug.handlers.ToggleBreakpointHandler"
+            commandId="com.nmox.studio.debug.toggleBreakpoint">
+      </handler>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandId="com.nmox.studio.debug.toggleBreakpoint"
+            contextId="org.eclipse.ui.textEditorScope"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+SHIFT+B">
+      </key>
+   </extension>
+</plugin>

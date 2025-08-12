@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="com.nmox.studio.feature"
+      label="NMOX Studio Feature"
+      version="1.0.0.qualifier"
+      provider-name="NMOX">
+
+   <description url="http://www.nmox.com">
+      NMOX Studio Eclipse - Web Development Swiss Army Knife
+   </description>
+
+   <copyright url="http://www.nmox.com">
+      Copyright (c) 2024 NMOX. All rights reserved.
+   </copyright>
+
+   <license url="http://www.eclipse.org/legal/epl-2.0/">
+      Eclipse Public License - v 2.0
+   </license>
+
+   <plugin
+         id="com.nmox.studio.core"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.nmox.studio.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.nmox.studio.editor"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="com.nmox.studio.debug"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>

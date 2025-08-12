@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.4"?>
+<plugin>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.nmox.studio.ui.perspectives.WebDevelopmentPerspective"
+            icon="icons/perspective.png"
+            id="com.nmox.studio.ui.webPerspective"
+            name="Web Development">
+      </perspective>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.views">
+      <category
+            id="com.nmox.studio.ui.views"
+            name="NMOX Studio">
+      </category>
+      <view
+            category="com.nmox.studio.ui.views"
+            class="com.nmox.studio.ui.views.LivePreviewView"
+            icon="icons/preview.png"
+            id="com.nmox.studio.ui.livePreview"
+            name="Live Preview"
+            restorable="true">
+      </view>
+      <view
+            category="com.nmox.studio.ui.views"
+            class="com.nmox.studio.ui.views.ServerConsoleView"
+            icon="icons/server.png"
+            id="com.nmox.studio.ui.serverConsole"
+            name="Dev Server"
+            restorable="true">
+      </view>
+      <view
+            category="com.nmox.studio.ui.views"
+            class="com.nmox.studio.ui.views.PackageManagerView"
+            icon="icons/package.png"
+            id="com.nmox.studio.ui.packageManager"
+            name="Package Manager"
+            restorable="true">
+      </view>
+      <view
+            category="com.nmox.studio.ui.views"
+            class="com.nmox.studio.ui.views.TerminalView"
+            icon="icons/terminal.png"
+            id="com.nmox.studio.ui.terminal"
+            name="Terminal"
+            restorable="true">
+      </view>
+      <view
+            category="com.nmox.studio.ui.views"
+            class="com.nmox.studio.ui.views.WebProjectExplorerView"
+            icon="icons/explorer.png"
+            id="com.nmox.studio.ui.webExplorer"
+            name="Web Explorer"
+            restorable="true">
+      </view>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            id="com.nmox.studio.ui.commands"
+            name="NMOX Studio Commands">
+      </category>
+      <command
+            categoryId="com.nmox.studio.ui.commands"
+            id="com.nmox.studio.ui.startServer"
+            name="Start Dev Server">
+      </command>
+      <command
+            categoryId="com.nmox.studio.ui.commands"
+            id="com.nmox.studio.ui.stopServer"
+            name="Stop Dev Server">
+      </command>
+      <command
+            categoryId="com.nmox.studio.ui.commands"
+            id="com.nmox.studio.ui.refreshPreview"
+            name="Refresh Preview">
+      </command>
+      <command
+            categoryId="com.nmox.studio.ui.commands"
+            id="com.nmox.studio.ui.installPackage"
+            name="Install Package">
+      </command>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.handlers">
+      <handler
+            class="com.nmox.studio.ui.handlers.StartServerHandler"
+            commandId="com.nmox.studio.ui.startServer">
+      </handler>
+      <handler
+            class="com.nmox.studio.ui.handlers.StopServerHandler"
+            commandId="com.nmox.studio.ui.stopServer">
+      </handler>
+      <handler
+            class="com.nmox.studio.ui.handlers.RefreshPreviewHandler"
+            commandId="com.nmox.studio.ui.refreshPreview">
+      </handler>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.menus">
+      <menuContribution
+            allPopups="false"
+            locationURI="menu:org.eclipse.ui.main.menu">
+         <menu
+               id="com.nmox.studio.ui.menu"
+               label="Web Dev">
+            <command
+                  commandId="com.nmox.studio.ui.startServer"
+                  label="Start Dev Server"
+                  style="push">
+            </command>
+            <command
+                  commandId="com.nmox.studio.ui.stopServer"
+                  label="Stop Dev Server"
+                  style="push">
+            </command>
+            <separator
+                  name="com.nmox.studio.ui.separator1"
+                  visible="true">
+            </separator>
+            <command
+                  commandId="com.nmox.studio.ui.refreshPreview"
+                  label="Refresh Preview"
+                  style="push">
+            </command>
+         </menu>
+      </menuContribution>
+      <menuContribution
+            allPopups="false"
+            locationURI="toolbar:org.eclipse.ui.main.toolbar">
+         <toolbar
+               id="com.nmox.studio.ui.toolbar">
+            <command
+                  commandId="com.nmox.studio.ui.startServer"
+                  icon="icons/start.png"
+                  label="Start Server"
+                  style="push"
+                  tooltip="Start Development Server">
+            </command>
+            <command
+                  commandId="com.nmox.studio.ui.stopServer"
+                  icon="icons/stop.png"
+                  label="Stop Server"
+                  style="push"
+                  tooltip="Stop Development Server">
+            </command>
+            <command
+                  commandId="com.nmox.studio.ui.refreshPreview"
+                  icon="icons/refresh.png"
+                  label="Refresh"
+                  style="push"
+                  tooltip="Refresh Live Preview">
+            </command>
+         </toolbar>
+      </menuContribution>
+   </extension>
+   
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="com.nmox.studio.ui.wizards"
+            name="Web Development">
+      </category>
+      <wizard
+            category="com.nmox.studio.ui.wizards"
+            class="com.nmox.studio.ui.wizards.NewWebProjectWizard"
+            icon="icons/project.png"
+            id="com.nmox.studio.ui.newWebProject"
+            name="Web Project"
+            project="true">
+      </wizard>
+      <wizard
+            category="com.nmox.studio.ui.wizards"
+            class="com.nmox.studio.ui.wizards.NewHTMLFileWizard"
+            icon="icons/html.png"
+            id="com.nmox.studio.ui.newHTMLFile"
+            name="HTML File">
+      </wizard>
+   </extension>
+</plugin>

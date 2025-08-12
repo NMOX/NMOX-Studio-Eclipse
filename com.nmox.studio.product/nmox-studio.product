@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="NMOX Studio Eclipse" uid="com.nmox.studio.product" id="com.nmox.studio.ui.product" application="org.eclipse.ui.ide.workbench" version="1.0.0.qualifier" useFeatures="true" includeLaunchers="true">
+
+   <aboutInfo>
+      <image path="icons/about.png"/>
+      <text>
+         NMOX Studio Eclipse - Web Development Swiss Army Knife
+
+Version: {0}
+Build id: {1}
+
+A comprehensive web development IDE built on Eclipse Platform.
+Features include live preview, dev server integration, terminal, 
+package management, and advanced editing capabilities for 
+HTML, CSS, JavaScript, and more.
+
+Copyright (c) 2024 NMOX. All rights reserved.
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <programArgs>-showsplash
+-data @user.home/nmox-studio-workspace
+      </programArgs>
+      <vmArgs>-Dosgi.requiredJavaVersion=17
+-Dosgi.instance.area.default=@user.home/nmox-studio-workspace
+-Xms256m
+-Xmx2048m
+--add-modules=ALL-SYSTEM
+      </vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts
+      </vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="icons/nmox16.png" i32="icons/nmox32.png" i48="icons/nmox48.png" i64="icons/nmox64.png" i128="icons/nmox128.png"/>
+
+   <splash
+      location="com.nmox.studio.ui"
+      startupProgressRect="5,275,445,15"
+      startupMessageRect="7,252,445,20"
+      startupForegroundColor="FFFFFF" />
+   <launcher name="nmox-studio">
+      <linux icon="icons/nmox.xpm"/>
+      <macosx icon="icons/nmox.icns"/>
+      <win useIco="false">
+         <bmp
+            winSmallHigh="icons/nmox16.bmp"
+            winSmallLow="icons/nmox16_8.bmp"
+            winMediumHigh="icons/nmox32.bmp"
+            winMediumLow="icons/nmox32_8.bmp"
+            winLargeHigh="icons/nmox48.bmp"
+            winLargeLow="icons/nmox48_8.bmp"/>
+      </win>
+   </launcher>
+
+   <intro introId="com.nmox.studio.ui.intro"/>
+
+   <vm>
+   </vm>
+
+   <plugins>
+   </plugins>
+
+   <features>
+      <feature id="com.nmox.studio.feature" installMode="root"/>
+      <feature id="org.eclipse.platform" installMode="root"/>
+      <feature id="org.eclipse.rcp" installMode="root"/>
+      <feature id="org.eclipse.help" installMode="root"/>
+   </features>
+
+   <configurations>
+      <plugin id="org.apache.felix.scr" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.core.runtime" autoStart="true" startLevel="0" />
+      <plugin id="org.eclipse.equinox.common" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.event" autoStart="true" startLevel="2" />
+      <plugin id="org.eclipse.equinox.simpleconfigurator" autoStart="true" startLevel="1" />
+   </configurations>
+
+   <preferencesInfo>
+      <targetfile overwrite="false"/>
+   </preferencesInfo>
+
+   <cssInfo>
+   </cssInfo>
+
+</product>
